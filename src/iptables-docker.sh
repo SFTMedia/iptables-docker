@@ -122,6 +122,9 @@ start() {
     
     # Other firewall rules
     # insert here your firewall rules
+    
+    iptables-restore -n /etc/iptables/rules.v4
+    iptables-restore -n /etc/iptables/rules.v6
 
     # Swarm mode - uncomment to enable swarm access (adjust source lan)
     # $IPT -A INPUT -p tcp --dport 2377 -m state --state NEW -s 192.168.1.0/24 -j ACCEPT
